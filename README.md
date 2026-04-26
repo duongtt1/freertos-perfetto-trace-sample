@@ -2,7 +2,7 @@
 
 This folder contains a drop-in replacement for:
 
-`FreeRTOS/Demo/R-Car_Gen5_CR52/sample_apps/dummy_app`
+`FreeRTOS/Demo/R-Car_Gen5_CR52/sample_apps/freertos-perfetto-trace-sample`
 
 ## Quick Use
 
@@ -10,16 +10,15 @@ This folder contains a drop-in replacement for:
    `renesas-rcar/FreeRTOS.git`
    `rcar_freertos_bsp_ironhide`
 
-2. Replace the existing folder:
-   `FreeRTOS/Demo/R-Car_Gen5_CR52/sample_apps/dummy_app`
+2. Copy this folder to:
+   `FreeRTOS/Demo/R-Car_Gen5_CR52/sample_apps/freertos-perfetto-trace-sample`
 
-   with:
-   `dropin/renesas_rcar_gen5_cr52/dummy_app`
+3. Modify the parent `CMakeLists.txt` to include this sample app:
 
-3. Build as usual.
-
-Because the upstream `R-Car_Gen5_CR52/CMakeLists.txt` already includes
-`sample_apps/dummy_app`, no root CMake edit is required for the overwrite path.
+```cmake
+add_subdirectory(sample_apps/freertos-perfetto-trace-sample)
+```
+4. Build as usual
 
 ## What This App Does
 
